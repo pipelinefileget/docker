@@ -25,7 +25,7 @@ RUN mkdir $NVM_DIR
 RUN WORKDIR=$NVM_DIR
 
 ###nvmのダウンロード及びインストール
-RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash \
+RUN curl -o https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash \
     && source $NVM_DIR/nvm.sh && nvm install $NODE_VERSION \
     && cd /root \
     && /usr/local/nvm/versions/node/v10.19.0/bin/npm \
