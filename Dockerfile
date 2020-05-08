@@ -1,5 +1,3 @@
-FROM centos:centos7
-
 FROM image-registry.openshift-image-registry.svc:5000/dev01/centos:centos7
 
 RUN yum install -y curl
