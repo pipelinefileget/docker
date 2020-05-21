@@ -1,7 +1,7 @@
-FROM centos:centos7
-  
-RUN echo "now building..."
-RUN yum -y install httpd
-
-EXPOSE 80
-CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+FROM centos:7
+RUN yum update
+RUN yum install -y gcc gmake gdb && yum clean all -y
+ADD server.c /
+ADD wrapper.sh /
+RUN gcc server.c
+CMD ["/bin/sh","/wrapper.sh"]
